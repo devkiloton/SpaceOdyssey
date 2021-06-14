@@ -4,33 +4,30 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     [SerializeField]
+    private Transform target;
+    [SerializeField]
     private GameObject prefabInimigo;
     [SerializeField]
-    private float tempo;
+    private Scores scores;
+    [SerializeField]
+    private float time;
     [SerializeField]
     private float raio;
 
     private void Start()
     {
-        StartCoroutine(this.IniciarGeracao());
+        InvokeRepeating("Instantiate", 0f, time);
     }
-
-    private IEnumerator IniciarGeracao()
+    private void Instantiate()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(this.tempo);
-            this.Instanciar();
-        }
+        var enemy = GameObject.Instantiate(this.prefabInimigo);
+        this.DefinirPosicaoInimigo(enemy);
+        enemy.GetComponent<Follow>().SetTarget(target);
+        enemy.GetComponent<Scoreable>().SetScores(this.scores);
+
     }
 
-    private void Instanciar()
-    {
-        var inimigo = GameObject.Instantiate(this.prefabInimigo);
-        this.DefinirPosicaoInimigo(inimigo);
-    }
-
-    private void DefinirPosicaoInimigo(GameObject inimigo)
+    private void DefinirPosicaoInimigo(GameObject enemy)
     {
         var posicaoAleatoria = new Vector3(
                         Random.Range(-this.raio, this.raio),
@@ -38,6 +35,6 @@ public class Generator : MonoBehaviour
                         0);
 
         var posicaoInimigo = this.transform.position + posicaoAleatoria;
-        inimigo.transform.position = posicaoInimigo;
+        enemy.transform.position = posicaoInimigo;
     }
 }
