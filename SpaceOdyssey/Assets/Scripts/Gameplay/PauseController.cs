@@ -8,26 +8,34 @@ public class PauseController : MonoBehaviour
     private GameObject pausePanel;
     [SerializeField, Range(0,1)]
     private float timeScalePause;
+    private bool stationary;
     private void Update()
     {
         if (touchingScreen())
         {
-            continueGame();
+            if (stationary)
+            {
+                continueGame();
+            }
         }
         else
         {
-            pauseGame();
+            if (!stationary)
+            {
+                pauseGame();
+            }
         }
     }
     private void continueGame()
     {
-        pausePanel.SetActive(false);
-        timeScale(1);
+        StartCoroutine(continueGameWithTime());
+        stationary = false;
     }
     private void pauseGame()
     {
         pausePanel.SetActive(true);
         timeScale(timeScalePause);
+        stationary = true;
     }
     private bool touchingScreen()
     {
@@ -37,5 +45,11 @@ public class PauseController : MonoBehaviour
     {
         Time.timeScale = timeScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+    private IEnumerator continueGameWithTime()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        pausePanel.SetActive(false);
+        timeScale(1);
     }
 }

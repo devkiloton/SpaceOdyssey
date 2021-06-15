@@ -5,6 +5,13 @@ using UnityEngine.Events;
 
 public class Scores : MonoBehaviour
 {
+    public int Points
+    {
+        get
+        {
+            return points;
+        }
+    }
     [SerializeField]
     private myPersonalEventInt whenScore;
     private int points;
