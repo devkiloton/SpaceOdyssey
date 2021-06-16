@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97.978516, y: 0}
+  m_AnchoredPosition: {x: -95.774, y: 0}
   m_SizeDelta: {x: 50.4946, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &333944147764861528
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -113,7 +113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94.13977, y: 0}
+  m_AnchoredPosition: {x: 116.35, y: 0}
   m_SizeDelta: {x: 53.7634, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3964063741697646541
@@ -151,7 +151,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 3026754496113117826}
   - component: {fileID: 931851819041867096}
   - component: {fileID: 8241884211687583057}
+  - component: {fileID: -2025861073078996947}
   m_Layer: 5
   m_Name: Ranking
   m_TagString: Untagged
@@ -236,6 +237,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-2025861073078996947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798198745530132392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae637bf2a3dc364fa1db459758cb8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textRankScores: {fileID: 1504452585570083034}
+  textNameRankScores: {fileID: 3250866095613698346}
+  textPositionRank: {fileID: 5122857249490950315}
 --- !u!1 &8505085033365803645
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.978516, y: 0}
+  m_AnchoredPosition: {x: 9.473297, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5693845256729475312
@@ -308,7 +324,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
