@@ -11,15 +11,15 @@ public class PanelRanking : MonoBehaviour
     private GameObject prefabRanking;
     private void Start()
     {
-        var quantity = ranking.NumArrayElements();
-        for(var i=1; i < quantity; i++)
+        var pointsAndUsername = ranking.GetUsernameAndPoints();
+        for(var i=0; i < pointsAndUsername.Count; i++)
         {
             if (i > 5)
             {
                 break;
             }
             var rank = GameObject.Instantiate(prefabRanking, this.transform);
-            rank.GetComponent<RankingItem>().config(i, "Paula", 125);
+            rank.GetComponent<RankingItem>().config(i, pointsAndUsername[i].Username, pointsAndUsername[i].Points);
         }
     }
 }

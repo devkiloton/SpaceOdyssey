@@ -429,7 +429,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: jogo
+          m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &285902258
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af17d4849c86e0d44b4ee88c169ca83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 
+  usernameAndPoints: []
 --- !u!4 &1360988780
 Transform:
   m_ObjectHideFlags: 0

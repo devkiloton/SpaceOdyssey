@@ -18,6 +18,6 @@ public class NewScores : MonoBehaviour
             totalPoints = scores.Points;
         }
         scoresText.TextUpdate(totalPoints);
-        ranking.AddPoints(totalPoints);
+        ranking.AddPoints(totalPoints, "Name");
     }
 }
