@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Collections.ObjectModel;
+using System;
 
 public class RankingData : MonoBehaviour
 {
@@ -23,11 +24,14 @@ public class RankingData : MonoBehaviour
             usernameAndPoints = new List<UsernameAndPoints>();
         }
     }
-    public void AddPoints(int points, string username)
+    public int AddPoints(int points, string username)
     {
-        var pointsAndUsername = new UsernameAndPoints(username, points);
+        int id = usernameAndPoints.Count * UnityEngine.Random.Range(1, 100000);
+        var pointsAndUsername = new UsernameAndPoints(username, points, id);
         this.usernameAndPoints.Add(pointsAndUsername);
+        this.usernameAndPoints.Sort();
         saveData();
+        return id;
     }
     public int NumArrayElements()
     {
@@ -42,16 +46,35 @@ public class RankingData : MonoBehaviour
         var textJson = JsonUtility.ToJson(this);
         File.WriteAllText(pathJson, textJson);
     }
+    public void ChangeUsername(string username, int id)
+    {
+        foreach(var item in usernameAndPoints)
+        {
+            if (item.Id == id)
+            {
+                item.Username = username;
+                break;
+            }
+        }
+        saveData();
+    }
 }
 [System.Serializable]
-public class UsernameAndPoints
+public class UsernameAndPoints : IComparable
 {
     public string Username;
     public int Points;
-
-    public UsernameAndPoints(string username, int points)
+    public int Id;
+    public UsernameAndPoints(string username, int points, int id)
     {
         Username = username;
         Points = points;
+        Id = id;
+    }
+
+    public int CompareTo(object obj)
+    {
+        UsernameAndPoints anotherObject = obj as UsernameAndPoints;
+        return anotherObject.Points.CompareTo(Points);
     }
 }

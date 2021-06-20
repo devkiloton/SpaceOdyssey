@@ -9,15 +9,20 @@ public class NewScores : MonoBehaviour
     [SerializeField]
     private RankingData ranking;
     private Scores scores;
+    private int id;
     private void Start()
     {
         scores = GameObject.FindObjectOfType<Scores>();
         var totalPoints = -1;
-        if (scores!= null)
+        if (scores != null)
         {
             totalPoints = scores.Points;
         }
         scoresText.TextUpdate(totalPoints);
-        ranking.AddPoints(totalPoints, "Name");
+        id = ranking.AddPoints(totalPoints, "Name");
+    }
+    public void ChangeUsername(string Username)
+    {
+        ranking.ChangeUsername(Username, id);
     }
 }
