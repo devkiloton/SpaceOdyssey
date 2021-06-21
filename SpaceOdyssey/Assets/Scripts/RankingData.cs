@@ -24,9 +24,9 @@ public class RankingData : MonoBehaviour
             usernameAndPoints = new List<UsernameAndPoints>();
         }
     }
-    public int AddPoints(int points, string username)
+    public string AddPoints(int points, string username)
     {
-        int id = usernameAndPoints.Count * UnityEngine.Random.Range(1, 100000);
+        var id = Guid.NewGuid().ToString();
         var pointsAndUsername = new UsernameAndPoints(username, points, id);
         this.usernameAndPoints.Add(pointsAndUsername);
         this.usernameAndPoints.Sort();
@@ -46,7 +46,7 @@ public class RankingData : MonoBehaviour
         var textJson = JsonUtility.ToJson(this);
         File.WriteAllText(pathJson, textJson);
     }
-    public void ChangeUsername(string username, int id)
+    public void ChangeUsername(string username, string id)
     {
         foreach(var item in usernameAndPoints)
         {
@@ -64,8 +64,8 @@ public class UsernameAndPoints : IComparable
 {
     public string Username;
     public int Points;
-    public int Id;
-    public UsernameAndPoints(string username, int points, int id)
+    public string Id;
+    public UsernameAndPoints(string username, int points, string id)
     {
         Username = username;
         Points = points;

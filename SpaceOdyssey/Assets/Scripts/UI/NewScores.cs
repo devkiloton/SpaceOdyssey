@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class NewScores : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class NewScores : MonoBehaviour
     [SerializeField]
     private RankingData ranking;
     private Scores scores;
-    private int id;
+    private string id;
     private void Start()
     {
         scores = GameObject.FindObjectOfType<Scores>();
