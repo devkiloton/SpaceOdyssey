@@ -45,6 +45,7 @@ public class RankingData : MonoBehaviour
     {
         var textJson = JsonUtility.ToJson(this);
         File.WriteAllText(pathJson, textJson);
+        Debug.Log(pathJson);
     }
     public void ChangeUsername(string username, string id)
     {

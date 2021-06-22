@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 55775639}
   - component: {fileID: 55775638}
   m_Layer: 0
-  m_Name: DiretorDeCena
+  m_Name: Director
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 285902258}
   - component: {fileID: 285902257}
   m_Layer: 5
-  m_Name: JogarNovamente
+  m_Name: PlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 859690219}
   - component: {fileID: 859690218}
   m_Layer: 0
-  m_Name: Fundo
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

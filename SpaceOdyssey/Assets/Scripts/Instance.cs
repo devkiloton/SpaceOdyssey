@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Instance : MonoBehaviour
 {
-    private void Start()
+    private void Update()
     {
         var anotherInstances = GameObject.FindGameObjectsWithTag(this.tag);
         foreach(var instance in anotherInstances)

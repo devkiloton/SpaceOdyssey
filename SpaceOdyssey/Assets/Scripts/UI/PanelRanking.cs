@@ -12,7 +12,7 @@ public class PanelRanking : MonoBehaviour
     private void Start()
     {
         var pointsAndUsername = ranking.GetUsernameAndPoints();
-        for(var i=0; i < pointsAndUsername.Count; i++)
+        for(var i=1; i < pointsAndUsername.Count; i++)
         {
             if (i > 5)
             {

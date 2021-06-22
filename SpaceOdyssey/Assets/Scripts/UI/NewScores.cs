@@ -13,15 +13,23 @@ public class NewScores : MonoBehaviour
     private string id;
     private void Start()
     {
+        int totalPoints = getScores();
+        scoresText.TextUpdate(totalPoints);
+        id = ranking.AddPoints(totalPoints, "Name");
+    }
+
+    private int getScores()
+    {
         scores = GameObject.FindObjectOfType<Scores>();
         var totalPoints = -1;
         if (scores != null)
         {
             totalPoints = scores.Points;
         }
-        scoresText.TextUpdate(totalPoints);
-        id = ranking.AddPoints(totalPoints, "Name");
+
+        return totalPoints;
     }
+
     public void ChangeUsername(string Username)
     {
         ranking.ChangeUsername(Username, id);
