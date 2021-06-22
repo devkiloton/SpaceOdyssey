@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 18280043}
   - component: {fileID: 18280042}
-  - component: {fileID: 18280044}
   - component: {fileID: 18280045}
+  - component: {fileID: 18280044}
   m_Layer: 0
   m_Name: Scores
   m_TagString: Points
