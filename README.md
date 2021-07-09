@@ -34,7 +34,7 @@
 
 ![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/Screenshot_20210707-091518.jpg)
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/2021-07-07.jpg)
+![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/2021-07-07.png)
 
 # Check the scripts
 
