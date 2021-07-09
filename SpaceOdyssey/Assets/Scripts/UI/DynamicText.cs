@@ -16,6 +16,10 @@ public class DynamicText : MonoBehaviour
     }
     public void TextUpdateName(string name)
     {
-        text.text = name;
+        if(name.Length < 10)
+        {
+            text.text = name;
+        }
+        
     }
 }
